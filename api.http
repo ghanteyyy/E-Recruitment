@@ -1,0 +1,37 @@
+POST http://localhost:8000/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "test@test.com",
+    "password": "test123"
+}
+
+###
+POST http://localhost:8000/api/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "test@test.com",
+    "password": "test123",
+    "gender": "F",
+    "dob": "1999-03-05",
+
+    "name": {
+        "first_name": "Lila",
+        "middle_name": "",
+        "last_name": "Bonnet"
+    },
+
+    "address": {
+        "address_line1": "Paris, France",
+        "address_line2": "",
+        "city": "Paris",
+        "state": "Seine-et-Marne",
+        "country": "France"
+    },
+
+    "contact": {
+        "phone_number": "04-24-68-75-09",
+        "status": "A"
+    }
+}
