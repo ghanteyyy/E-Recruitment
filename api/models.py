@@ -108,7 +108,7 @@ class User_Contact(models.Model):
     status = models.CharField(choices=status_choices, default='A')
 
 
-class User_Profiles(models.Model):
+class User_Profile_Images(models.Model):
     file_choices = [
         ('CPP', 'Current Profile Pic'),
         ('PPP', 'Previous Profile Pic')
@@ -117,8 +117,7 @@ class User_Profiles(models.Model):
     id = models.UUIDField(primary_key=True, default=utils.generate_random_ids, editable=False)
     user_id = models.ForeignKey("CustomUser", on_delete=models.CASCADE, related_name='user_profiles')
 
-    title = models.CharField(max_length=50, blank=False, null=False)
-    file = models.FileField(upload_to=upload_to.user_profile_path)
+    image = models.FileField(upload_to=upload_to.user_profile_path)
     status = models.CharField(choices=file_choices, default='CPP')
 
 
