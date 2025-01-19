@@ -25,4 +25,5 @@ urlpatterns = [
     path('api/profile/image/update', views.UpdateProfileImage.as_view(), name='update_profile_image'),
     path('api/user/documents/retrieve', views.User_Document_view.as_view(), name='retrieve_user_documents'),
     path('api/user/documents/add', views.User_Document_view.as_view(), name='add_user_documents'),
+    path('api/recruiter/add', views.Recruiter_view.as_view(), name="add_recruiter")
 ]
