@@ -20,5 +20,9 @@ from . import views
 
 
 urlpatterns = [
+    path('api/login', views.Login.as_view(), name='login'),
     path('api/register', views.Register.as_view(), name='register'),
+    path('api/profile/image/update', views.UpdateProfileImage.as_view(), name='update_profile_image'),
+    path('api/user/documents/retrieve', views.User_Document_view.as_view(), name='retrieve_user_documents'),
+    path('api/user/documents/add', views.User_Document_view.as_view(), name='add_user_documents'),
 ]
