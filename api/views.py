@@ -1,10 +1,25 @@
+from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .serializers import *
-from rest_framework import status
 from django.contrib.auth import authenticate, login
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
+from .serializers import *
+
+
+def login_and_generate_tokens(request, email, password):
+    user = authenticate(request, email=email, password=password)
+
+    if user:
+        login(request, user)  # Log the user in
+        refresh = RefreshToken.for_user(user)  # Generate tokens
+
+        return {
+            'refresh': str(refresh),
+            'access': str(refresh.access_token)
+        }
+
+    return None
 
 
 class Register(APIView):
@@ -15,26 +30,23 @@ class Register(APIView):
 
         # Serialize the created user instance
         response_serializer = UserSerializer(user)
-        return Response(response_serializer.data)
+
+        # Automaically make the user login
+        user_login = login_and_generate_tokens(request, request.data['email'], request.data['password'])
+
+        # Response data
+        response = {'user': response_serializer.data}
+        response.update({'token': user_login})
+
+        return Response(response, status=status.HTTP_200_OK)
 
 
 class Login(APIView):
     def post(self, request, *args, **kwargs):
-        email = request.data.get('email')
-        password = request.data.get('password')
-
-        user = authenticate(request, email=email, password=password)
+        user = login_and_generate_tokens(request, request.data.get('email'), request.data.get('password'))
 
         if user:
-            login(request, user)
-
-            # Generate JWT tokens
-            refresh = RefreshToken.for_user(user)
-
-            return Response({
-                'refresh': str(refresh),
-                'accress': str(refresh.access_token)
-            }, status=status.HTTP_200_OK)
+            return Response(user, status=status.HTTP_200_OK)
 
         else:
             return Response({'detail': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
