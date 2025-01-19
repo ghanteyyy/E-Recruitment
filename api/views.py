@@ -105,3 +105,22 @@ class User_Document_view(APIView):
                 {"error": "No user's documents found."},
                  status=status.HTTP_404_NOT_FOUND
             )
+
+
+class Recruiter_view(APIView):
+    def post(self, request):
+        user_serialized = UserSerializer(data=request.data)
+        user_serialized.is_valid(raise_exception=True)
+
+        user = user_serialized.save()
+        user_data = UserSerializer(user).data
+
+        recruiter_serialized = Recruiter_Serializer(data=request.data, context={"user": user})
+        recruiter_serialized.is_valid(raise_exception=True)
+
+        recruiter = recruiter_serialized.save()
+        recruiter_data = Recruiter_Serializer(recruiter).data
+
+        response = user_data | recruiter_data
+
+        return Response(response, status=status.HTTP_200_OK)
