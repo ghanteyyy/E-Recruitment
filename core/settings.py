@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 import dotenv
+import datetime
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -143,4 +144,14 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=60),  # Extend as needed (e.g., 60 minutes)
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=7),     # Extend as needed (e.g., 7 days)
+    'ROTATE_REFRESH_TOKENS': True,                  # Optional: rotates refresh tokens on use
+    'BLACKLIST_AFTER_ROTATION': True,               # Optional: blacklist old refresh tokens
+    'ALGORITHM': 'HS256',                           # Ensure you are using the correct algorithm
+    'SIGNING_KEY': '2e0b612916584839a1778cb1cfaad9c2',               # Replace with your actual secret key
+    'AUTH_HEADER_TYPES': ('Bearer',),               # Ensure it matches your frontend headers
 }
