@@ -92,3 +92,20 @@ class User_Documents_Serializer(serializers.ModelSerializer):
         )
 
         return user_document
+
+
+class Recruiter_Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Recruiter
+        fields = ['company_name', 'designation']
+
+    def create(self, validated_data):
+        user = self.context['user']
+
+        recruiter = models.Recruiter.objects.create(
+            user_id = user,
+            company_name = validated_data.get('company_name'),
+            designation = validated_data.get('designation')
+        )
+
+        return recruiter
