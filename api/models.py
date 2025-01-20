@@ -155,7 +155,7 @@ class User_Applications(models.Model):
 
 class Recruiter(models.Model):
     id = models.UUIDField(primary_key=True, default=utils.generate_random_ids, editable=False)
-    user_id = models.ForeignKey("CustomUser", on_delete=models.CASCADE, related_name='user_applications')
+    user_id = models.OneToOneField("CustomUser", on_delete=models.CASCADE)
 
     company_name = models.CharField(max_length=50, blank=False, null=False)
     designation = models.CharField(max_length=50, blank=False, null=False)
