@@ -58,7 +58,6 @@ class UpdateProfileImage(APIView):
     def post(self, request):
         seriazlied = User_Profiles_Image_Serializers(data=request.data, context={'user': request.user})
         seriazlied.is_valid(raise_exception=True)
-
         profile_image = seriazlied.save()
 
         return Response(
@@ -87,7 +86,6 @@ class User_Document_view(APIView):
     def post(self, request):
         serialized = User_Documents_Serializer(data=request.data, context={'user': request.user})
         serialized.is_valid(raise_exception=True)
-
         user_document = serialized.save()
 
         return Response(User_Documents_Serializer(user_document).data, status=status.HTTP_200_OK)
@@ -117,10 +115,24 @@ class Recruiter_view(APIView):
 
         recruiter_serialized = Recruiter_Serializer(data=request.data, context={"user": user})
         recruiter_serialized.is_valid(raise_exception=True)
-
         recruiter = recruiter_serialized.save()
-        recruiter_data = Recruiter_Serializer(recruiter).data
 
+        recruiter_data = Recruiter_Serializer(recruiter).data
         response = user_data | recruiter_data
 
         return Response(response, status=status.HTTP_200_OK)
+
+
+class Job_view(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        recruiter = models.Recruiter.objects.get(user_id=request.user)
+
+        job_serialized = Jobs_Serializer(data=request.data, context={'recruiter': recruiter})
+        job_serialized.is_valid(raise_exception=True)
+        job = job_serialized.save()
+
+        job_data = Jobs_Serializer(job)
+
+        return Response(job_data.data, status=status.HTTP_200_OK)
