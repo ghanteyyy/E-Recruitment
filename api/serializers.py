@@ -109,3 +109,24 @@ class Recruiter_Serializer(serializers.ModelSerializer):
         )
 
         return recruiter
+
+
+class Jobs_Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Jobs
+        fields = ["title", "description", "requirements", "salary", "location", "deadline"]
+
+    def create(self, validated_data):
+        recruiter = self.context['recruiter']
+
+        job = models.Jobs.objects.create(
+            recruiter_id = recruiter,
+            title = validated_data.get('title'),
+            description = validated_data.get('description'),
+            requirements = validated_data.get('requirements'),
+            salary = validated_data.get('salary'),
+            location = validated_data.get('location'),
+            deadline = validated_data.get('deadline')
+        )
+
+        return job
