@@ -114,3 +114,27 @@ Content-Type: application/json
     "designation": "HR",
     "is_staff": "true"
 }
+
+
+###
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+    "email": "hrtest@test.com",
+    "password": "hrtest123"
+}
+
+###
+POST http://localhost:8000/api/job/create HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3MzkzNjMxLCJpYXQiOjE3MzczOTAwMzEsImp0aSI6IjdiMjVhMWNlZWZlNTQxZGE4MGI4NDhkYzYxOWU3MTg3IiwidXNlcl9pZCI6IjJkNzM5YTY5LTZiZjQtNGFjMi1iNmQ3LTVjNDM4ZjI1ZTk4NiJ9.bUGJHo7UFx6F4JPx0N3IqIJTpkgeTKFPAErIw0IjAtU
+
+{
+    "title": "Software Engineer",
+    "description": "Responsible for designing, developing, and maintaining software applications.",
+    "requirements": "Bachelor's degree in Computer Science or related field, 2+ years of experience in software development.",
+    "salary": "60,000 - 80,000 USD per year",
+    "location": "New York, NY",
+    "deadline": "2025-02-15"
+}
