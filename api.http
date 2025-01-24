@@ -58,15 +58,15 @@ Content-Type: image/jpeg
 --boundary123--
 
 ###
-GET http://127.0.0.1:8000/api/profile/image/update HTTP/1.1
+GET http://127.0.0.1:8000/api/profile/image HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3MjEzMjI1LCJpYXQiOjE3MzcyMTI5MjUsImp0aSI6ImM2ZTgwOTdkNjQyMjRmOWVhMmNhYmFjNzliYjA3NGY4IiwidXNlcl9pZCI6ImRmZDY2ZGZiLTE3NDItNDdmZi04ZTk5LTdhZThjNWIxNjhiNyJ9.oy7qgjSz5Px0vXLJe8PZh1-Hcm8UVG_zA9lH_d5PxSE
 
 ###
-GET http://localhost:8000/api/user/documents/retrieve HTTP/1.1
+GET http://localhost:8000/api/user/documents HTTP/1.1
 Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3MjkzNzk3LCJpYXQiOjE3MzcyOTAxOTcsImp0aSI6IjYyNDRiNjdiYTY2NTQ5OGFiOWJiNzVjNGU3YTZmNzBhIiwidXNlcl9pZCI6ImRmZDY2ZGZiLTE3NDItNDdmZi04ZTk5LTdhZThjNWIxNjhiNyJ9.Sok8xandfZiK15cbcih8LOAJBaTFXscrYWPu8rWJ8lE
 
 ###
-POST http://127.0.0.1:8000/api/user/documents/add HTTP/1.1
+POST http://127.0.0.1:8000/api/user/documents HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3MjkzNzk3LCJpYXQiOjE3MzcyOTAxOTcsImp0aSI6IjYyNDRiNjdiYTY2NTQ5OGFiOWJiNzVjNGU3YTZmNzBhIiwidXNlcl9pZCI6ImRmZDY2ZGZiLTE3NDItNDdmZi04ZTk5LTdhZThjNWIxNjhiNyJ9.Sok8xandfZiK15cbcih8LOAJBaTFXscrYWPu8rWJ8lE
 Content-Type: multipart/form-data; boundary=boundary123
 
@@ -82,7 +82,11 @@ Content-Type: image/jpeg
 --boundary123--
 
 ###
-POST http://localhost:8000/api/recruiter/add HTTP/1.1
+GET http://localhost:8000/api/recruiter HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3NjQ5MDY2LCJpYXQiOjE3Mzc2NDU0NjYsImp0aSI6ImM4ZWVjYWU3NDhhNDQxNGZhZDM3YWY0NTJmYjkxNTYxIiwidXNlcl9pZCI6Ijg4MGNlNDIwLTQwMGItNGUzNC04NGJmLTQ1ZTlmZGQ1NDMzYiJ9.gZQIkNY1oE0PKErIgd-NTOIyhlEjltOqk2V4mfDKGcg
+
+###
+POST http://localhost:8000/api/recruiter HTTP/1.1
 Content-Type: application/json
 
 {
@@ -126,9 +130,9 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:8000/api/job/create HTTP/1.1
+POST http://localhost:8000/api/job HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3MzkzNjMxLCJpYXQiOjE3MzczOTAwMzEsImp0aSI6IjdiMjVhMWNlZWZlNTQxZGE4MGI4NDhkYzYxOWU3MTg3IiwidXNlcl9pZCI6IjJkNzM5YTY5LTZiZjQtNGFjMi1iNmQ3LTVjNDM4ZjI1ZTk4NiJ9.bUGJHo7UFx6F4JPx0N3IqIJTpkgeTKFPAErIw0IjAtU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3NzIwNTIzLCJpYXQiOjE3Mzc3MTY5MjMsImp0aSI6ImJjN2QzOTk4ODZkZjRkODQ4MzZhNTMzYWQ4MThiZTI3IiwidXNlcl9pZCI6Ijg4MGNlNDIwLTQwMGItNGUzNC04NGJmLTQ1ZTlmZGQ1NDMzYiJ9.GVls_tc5-p8On2M35nM-67fhbK0G-9ijRQZjqKh_jTM
 
 {
     "title": "Software Engineer",
@@ -137,4 +141,17 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
     "salary": "60,000 - 80,000 USD per year",
     "location": "New York, NY",
     "deadline": "2025-02-15"
+}
+
+###
+GET http://localhost:8000/api/job HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3NjQ1MzQ1LCJpYXQiOjE3Mzc2NDE3NDUsImp0aSI6IjAzYzNjOTkxNTVkNzQ3ZGE4M2RlYzNhOWFiNDIwYTg2IiwidXNlcl9pZCI6Ijg4MGNlNDIwLTQwMGItNGUzNC04NGJmLTQ1ZTlmZGQ1NDMzYiJ9.oPGQp-ckTsX82cepgZNoAyJ19TnG_fvdf0l-tF_sgRw
+
+###
+DELETE http://localhost:8000/api/job HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3NjQ1MzQ1LCJpYXQiOjE3Mzc2NDE3NDUsImp0aSI6IjAzYzNjOTkxNTVkNzQ3ZGE4M2RlYzNhOWFiNDIwYTg2IiwidXNlcl9pZCI6Ijg4MGNlNDIwLTQwMGItNGUzNC04NGJmLTQ1ZTlmZGQ1NDMzYiJ9.oPGQp-ckTsX82cepgZNoAyJ19TnG_fvdf0l-tF_sgRw
+Content-Type: application/json
+
+{
+    "job_id": "8f45fb89-7d59-48ba-afc0-0535a6b7d136"
 }
