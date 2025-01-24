@@ -7,17 +7,24 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import *
 
 
+jwt_tokens = dict()
+
+
 def login_and_generate_tokens(request, email, password):
+    global jwt_tokens
+
     user = authenticate(request, email=email, password=password)
 
     if user:
         login(request, user)  # Log the user in
         refresh = RefreshToken.for_user(user)  # Generate tokens
 
-        return {
+        jwt_tokens = {
             'refresh': str(refresh),
             'access': str(refresh.access_token)
         }
+
+        return jwt_tokens
 
     return None
 
@@ -43,10 +50,14 @@ class Register(APIView):
 
 class Login(APIView):
     def post(self, request, *args, **kwargs):
-        user = login_and_generate_tokens(request, request.data.get('email'), request.data.get('password'))
+        tokens = login_and_generate_tokens(request, request.data.get('email'), request.data.get('password'))
 
-        if user:
-            return Response(user, status=status.HTTP_200_OK)
+        if tokens:
+            user = models.CustomUser.objects.get(email=request.data.get('email'))
+            user_data = UserSerializer(user).data
+
+            response = user_data | {'token': tokens}
+            return Response(response, status=status.HTTP_200_OK)
 
         else:
             return Response({'detail': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
@@ -106,6 +117,18 @@ class User_Document_view(APIView):
 
 
 class Recruiter_view(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user_data = UserSerializer(request.user).data
+
+        recruiter = models.Recruiter.objects.get(user_id=request.user)
+        recruiter_data = Recruiter_Serializer(recruiter).data
+
+        reponse_data = recruiter_data | user_data | {'token': jwt_tokens}
+
+        return Response(reponse_data, status=status.HTTP_200_OK)
+
     def post(self, request):
         user_serialized = UserSerializer(data=request.data)
         user_serialized.is_valid(raise_exception=True)
@@ -126,6 +149,14 @@ class Recruiter_view(APIView):
 class Job_view(APIView):
     permission_classes = [IsAuthenticated]
 
+    def get(self, request):
+        recruiter = models.Recruiter.objects.get(user_id=request.user)
+
+        jobs = models.Jobs.objects.filter(recruiter_id=recruiter)
+        job_serialized = Jobs_Serializer(jobs, many=True)
+
+        return Response(job_serialized.data, status=status.HTTP_200_OK)
+
     def post(self, request):
         recruiter = models.Recruiter.objects.get(user_id=request.user)
 
@@ -136,3 +167,13 @@ class Job_view(APIView):
         job_data = Jobs_Serializer(job)
 
         return Response(job_data.data, status=status.HTTP_200_OK)
+
+    def delete(self, request):
+        try:
+            job_to_delete = models.Jobs.objects.get(id=request.data.get('job_id'))
+            job_to_delete.delete()
+
+            return Response({'message': 'Job has been deleted'}, status=status.HTTP_200_OK)
+
+        except models.Jobs.DoesNotExist:
+            return Response({'message': 'Job does not exist'}, status=status.HTTP_200_OK)
