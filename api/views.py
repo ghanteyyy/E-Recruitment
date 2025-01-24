@@ -1,7 +1,7 @@
+import django.contrib.auth as auth
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.contrib.auth import authenticate, login
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import *
@@ -13,10 +13,10 @@ jwt_tokens = dict()
 def login_and_generate_tokens(request, email, password):
     global jwt_tokens
 
-    user = authenticate(request, email=email, password=password)
+    user = auth.authenticate(request, email=email, password=password)
 
     if user:
-        login(request, user)  # Log the user in
+        auth.login(request, user)  # Log the user in
         refresh = RefreshToken.for_user(user)  # Generate tokens
 
         jwt_tokens = {
@@ -61,6 +61,15 @@ class Login(APIView):
 
         else:
             return Response({'detail': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+
+
+class Logout(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        auth.logout(request)
+
+        return Response({'message': 'User logout successfully'}, status=status.HTTP_200_OK)
 
 
 class UpdateProfileImage(APIView):
