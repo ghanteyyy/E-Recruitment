@@ -95,9 +95,11 @@ class User_Documents_Serializer(serializers.ModelSerializer):
 
 
 class Recruiter_Serializer(serializers.ModelSerializer):
+    recruiter_id = serializers.SerializerMethodField()
+
     class Meta:
         model = models.Recruiter
-        fields = ['company_name', 'designation']
+        fields = ['recruiter_id', 'company_name', 'designation']
 
     def create(self, validated_data):
         user = self.context['user']
@@ -110,11 +112,16 @@ class Recruiter_Serializer(serializers.ModelSerializer):
 
         return recruiter
 
+    def get_recruiter_id(self, obj):
+        return obj.id
+
 
 class Jobs_Serializer(serializers.ModelSerializer):
+    job_id = serializers.SerializerMethodField()
+
     class Meta:
         model = models.Jobs
-        fields = ["title", "description", "requirements", "salary", "location", "deadline"]
+        fields = ['job_id', 'title', 'description', 'requirements', 'salary', 'location', 'deadline']
 
     def create(self, validated_data):
         recruiter = self.context['recruiter']
@@ -130,3 +137,6 @@ class Jobs_Serializer(serializers.ModelSerializer):
         )
 
         return job
+
+    def get_job_id(self, obj):
+        return obj.id
