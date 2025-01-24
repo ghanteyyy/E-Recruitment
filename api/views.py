@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.contrib.auth import authenticate, login
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import *
 
@@ -117,7 +117,14 @@ class User_Document_view(APIView):
 
 
 class Recruiter_view(APIView):
-    permission_classes = [IsAuthenticated]
+    def get_permission(self):
+        if self.request.method == 'GET' or (self.request.method == 'POST' and self.request.user):
+            self.permission_classes = [IsAuthenticated]
+
+        else:
+            self.permission_classes = [AllowAny]
+
+        return super().get_permissions()
 
     def get(self, request):
         user_data = UserSerializer(request.user).data
