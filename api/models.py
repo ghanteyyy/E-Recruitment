@@ -63,7 +63,7 @@ class CustomUser(AbstractUser):
     ]
 
 
-    id = models.UUIDField(primary_key=True, default=utils.generate_random_ids, editable=False)
+    id = models.CharField(primary_key=True, default=utils.generate_random_ids, editable=False)
 
     gender = models.CharField(choices=gender_choices, default='M')
     dob = models.DateField(blank=False, null=False)
@@ -76,7 +76,7 @@ class CustomUser(AbstractUser):
 
 
 class User_Name(models.Model):
-    id = models.UUIDField(primary_key=True, default=utils.generate_random_ids, editable=False)
+    id = models.CharField(primary_key=True, default=utils.generate_random_ids, editable=False)
     user_id = models.ForeignKey("CustomUser", on_delete=models.CASCADE, related_name='user_name')
 
     first_name = models.CharField(max_length=30, blank=False, null=False)
@@ -85,7 +85,7 @@ class User_Name(models.Model):
 
 
 class User_Address(models.Model):
-    id = models.UUIDField(primary_key=True, default=utils.generate_random_ids, editable=False)
+    id = models.CharField(primary_key=True, default=utils.generate_random_ids, editable=False)
     user_id = models.ForeignKey("CustomUser", on_delete=models.CASCADE, related_name='user_address')
 
     address_line1 = models.CharField(max_length=50, blank=False, null=False)
@@ -101,7 +101,7 @@ class User_Contact(models.Model):
         ('A', 'active')
     ]
 
-    id = models.UUIDField(primary_key=True, default=utils.generate_random_ids, editable=False)
+    id = models.CharField(primary_key=True, default=utils.generate_random_ids, editable=False)
     user_id = models.ForeignKey("CustomUser", on_delete=models.CASCADE, related_name='user_contact')
 
     phone_number = models.CharField(max_length=20, blank=False, null=False)
@@ -114,7 +114,7 @@ class User_Profile_Images(models.Model):
         ('PPP', 'Previous Profile Pic')
     ]
 
-    id = models.UUIDField(primary_key=True, default=utils.generate_random_ids, editable=False)
+    id = models.CharField(primary_key=True, default=utils.generate_random_ids, editable=False)
     user_id = models.ForeignKey("CustomUser", on_delete=models.CASCADE, related_name='user_profiles')
 
     image = models.FileField(upload_to=upload_to.user_profile_path)
@@ -127,7 +127,7 @@ class User_Documents(models.Model):
         ('PD', 'Previous Document')
     ]
 
-    id = models.UUIDField(primary_key=True, default=utils.generate_random_ids, editable=False)
+    id = models.CharField(primary_key=True, default=utils.generate_random_ids, editable=False)
     user_id = models.ForeignKey("CustomUser", on_delete=models.CASCADE, related_name='user_documents')
 
     title = models.CharField(max_length=50, blank=False, null=False)
@@ -143,7 +143,7 @@ class User_Applications(models.Model):
         ('ACPT', 'Accepted')
     ]
 
-    id = models.UUIDField(primary_key=True, default=utils.generate_random_ids, editable=False)
+    id = models.CharField(primary_key=True, default=utils.generate_random_ids, editable=False)
     user_id = models.ForeignKey("CustomUser", on_delete=models.CASCADE, related_name='users')
     job_id = models.ForeignKey("Jobs", on_delete=models.CASCADE, related_name='user_applications')
 
@@ -154,7 +154,7 @@ class User_Applications(models.Model):
 
 
 class Recruiter(models.Model):
-    id = models.UUIDField(primary_key=True, default=utils.generate_random_ids, editable=False)
+    id = models.CharField(primary_key=True, default=utils.generate_random_ids, editable=False)
     user_id = models.OneToOneField("CustomUser", on_delete=models.CASCADE)
 
     company_name = models.CharField(max_length=50, blank=False, null=False)
@@ -167,7 +167,7 @@ class Jobs(models.Model):
         ('CL', 'Closed')
     ]
 
-    id = models.UUIDField(primary_key=True, default=utils.generate_random_ids, editable=False)
+    id = models.CharField(primary_key=True, default=utils.generate_random_ids, editable=False)
     recruiter_id = models.ForeignKey("Recruiter", on_delete=models.CASCADE, related_name='Recruiter')
 
     title = models.CharField(max_length=100, blank=False, null=False)
