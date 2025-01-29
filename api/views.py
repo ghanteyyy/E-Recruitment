@@ -114,6 +114,9 @@ class User_Document_view(APIView):
         try:
             objects = models.User_Documents.objects.filter(user_id=request.user, status='CD')
 
+            if not objects:
+                return Response({'error': 'User document(s) not found'}, status=status.HTTP_200_OK)
+
             serialized = User_Documents_Serializer(objects, many=True)
 
             return Response(serialized.data, status=status.HTTP_200_OK)
@@ -166,10 +169,15 @@ class Job_view(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        recruiter = models.Recruiter.objects.get(user_id=request.user)
+        if request.user.is_staff:
+            recruiter = models.Recruiter.objects.get(user_id=request.user)
 
-        jobs = models.Jobs.objects.filter(recruiter_id=recruiter)
-        job_serialized = Jobs_Serializer(jobs, many=True)
+            jobs = models.Jobs.objects.filter(recruiter_id=recruiter)
+            job_serialized = Jobs_Serializer(jobs, many=True)
+
+        else:
+            jobs = models.Jobs.objects.filter(status='OP')
+            job_serialized = Jobs_Serializer(jobs, many=True)
 
         return Response(job_serialized.data, status=status.HTTP_200_OK)
 
