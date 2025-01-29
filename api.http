@@ -1,3 +1,5 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4MTYwOTY5LCJpYXQiOjE3MzgxNTczNjksImp0aSI6ImMzNzVkMjU0MjczYTRkOTlhNjc3ODg1YzJhNDQ2MjlkIiwidXNlcl9pZCI6ImFmYTg3ODY5ODY2YjRmYmE4NTY1OTFhOTQxODhjYTA2In0.Qgw_k6qa9VRH0-7myrzojMf6W3cc0BFg9CKF1QIkbTA
+
 POST http://localhost:8000/api/token/ HTTP/1.1
 Content-Type: application/json
 
@@ -47,11 +49,11 @@ Content-Type: application/json
 
 ###
 POST http://localhost:8000/api/logout HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3NzI3Nzk1LCJpYXQiOjE3Mzc3MjQxOTUsImp0aSI6ImYzM2NiNDdiM2I0OTRjMjk4MWZkNzM4ZWM0YWI3OWM4IiwidXNlcl9pZCI6ImQyYTMxOWUwYTliNDQ0ODFhZWRkYWY2ODY3ZWVmYzNjIn0.VPQ6Y9ZOfFGweopxiftrmv2yAluspyg3_5nGqFbpzFw
+Authorization: Bearer {{token}}
 
 ###
 POST http://127.0.0.1:8000/api/profile/image HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3NzI4NDM2LCJpYXQiOjE3Mzc3MjQ4MzYsImp0aSI6IjBjMWI5NTE4Nzc4MTRmYWZiYzNhYzg0YzgyZmQ5ZWU2IiwidXNlcl9pZCI6ImI5ZjVmNWZhOTMyOTQwOTBhNmMzNGQ1MjI2NWUzN2ZiIn0.Uqr2dyyyCyc9GxtwZSqoaSplkPP0s3GS7A1POMPo3mc
+Authorization: Bearer {{token}}
 Content-Type: multipart/form-data; boundary=boundary123
 
 --boundary123
@@ -63,15 +65,15 @@ Content-Type: image/jpeg
 
 ###
 GET http://127.0.0.1:8000/api/profile/image HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3NzI4NDM2LCJpYXQiOjE3Mzc3MjQ4MzYsImp0aSI6IjBjMWI5NTE4Nzc4MTRmYWZiYzNhYzg0YzgyZmQ5ZWU2IiwidXNlcl9pZCI6ImI5ZjVmNWZhOTMyOTQwOTBhNmMzNGQ1MjI2NWUzN2ZiIn0.Uqr2dyyyCyc9GxtwZSqoaSplkPP0s3GS7A1POMPo3mc
+Authorization: Bearer {{token}}
 
 ###
 GET http://localhost:8000/api/user/documents HTTP/1.1
-Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3NzI4NDM2LCJpYXQiOjE3Mzc3MjQ4MzYsImp0aSI6IjBjMWI5NTE4Nzc4MTRmYWZiYzNhYzg0YzgyZmQ5ZWU2IiwidXNlcl9pZCI6ImI5ZjVmNWZhOTMyOTQwOTBhNmMzNGQ1MjI2NWUzN2ZiIn0.Uqr2dyyyCyc9GxtwZSqoaSplkPP0s3GS7A1POMPo3mc
+Authorization:  Bearer {{token}}
 
 ###
 POST http://127.0.0.1:8000/api/user/documents HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3MjkzNzk3LCJpYXQiOjE3MzcyOTAxOTcsImp0aSI6IjYyNDRiNjdiYTY2NTQ5OGFiOWJiNzVjNGU3YTZmNzBhIiwidXNlcl9pZCI6ImRmZDY2ZGZiLTE3NDItNDdmZi04ZTk5LTdhZThjNWIxNjhiNyJ9.Sok8xandfZiK15cbcih8LOAJBaTFXscrYWPu8rWJ8lE
+Authorization: Bearer {{token}}
 Content-Type: multipart/form-data; boundary=boundary123
 
 --boundary123
@@ -87,7 +89,7 @@ Content-Type: image/jpeg
 
 ###
 GET http://localhost:8000/api/recruiter HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3NjQ5MDY2LCJpYXQiOjE3Mzc2NDU0NjYsImp0aSI6ImM4ZWVjYWU3NDhhNDQxNGZhZDM3YWY0NTJmYjkxNTYxIiwidXNlcl9pZCI6Ijg4MGNlNDIwLTQwMGItNGUzNC04NGJmLTQ1ZTlmZGQ1NDMzYiJ9.gZQIkNY1oE0PKErIgd-NTOIyhlEjltOqk2V4mfDKGcg
+Authorization: Bearer {{token}}
 
 ###
 POST http://localhost:8000/api/recruiter HTTP/1.1
@@ -136,7 +138,7 @@ Content-Type: application/json
 ###
 POST http://localhost:8000/api/job HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3NzIwNTIzLCJpYXQiOjE3Mzc3MTY5MjMsImp0aSI6ImJjN2QzOTk4ODZkZjRkODQ4MzZhNTMzYWQ4MThiZTI3IiwidXNlcl9pZCI6Ijg4MGNlNDIwLTQwMGItNGUzNC04NGJmLTQ1ZTlmZGQ1NDMzYiJ9.GVls_tc5-p8On2M35nM-67fhbK0G-9ijRQZjqKh_jTM
+Authorization: Bearer {{token}}
 
 {
     "title": "Software Engineer",
@@ -149,11 +151,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 
 ###
 GET http://localhost:8000/api/job HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3NjQ1MzQ1LCJpYXQiOjE3Mzc2NDE3NDUsImp0aSI6IjAzYzNjOTkxNTVkNzQ3ZGE4M2RlYzNhOWFiNDIwYTg2IiwidXNlcl9pZCI6Ijg4MGNlNDIwLTQwMGItNGUzNC04NGJmLTQ1ZTlmZGQ1NDMzYiJ9.oPGQp-ckTsX82cepgZNoAyJ19TnG_fvdf0l-tF_sgRw
+Authorization: Bearer {{token}}
 
 ###
 DELETE http://localhost:8000/api/job HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3NjQ1MzQ1LCJpYXQiOjE3Mzc2NDE3NDUsImp0aSI6IjAzYzNjOTkxNTVkNzQ3ZGE4M2RlYzNhOWFiNDIwYTg2IiwidXNlcl9pZCI6Ijg4MGNlNDIwLTQwMGItNGUzNC04NGJmLTQ1ZTlmZGQ1NDMzYiJ9.oPGQp-ckTsX82cepgZNoAyJ19TnG_fvdf0l-tF_sgRw
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
