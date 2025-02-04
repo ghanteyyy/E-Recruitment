@@ -1,4 +1,5 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4MTYwOTY5LCJpYXQiOjE3MzgxNTczNjksImp0aSI6ImMzNzVkMjU0MjczYTRkOTlhNjc3ODg1YzJhNDQ2MjlkIiwidXNlcl9pZCI6ImFmYTg3ODY5ODY2YjRmYmE4NTY1OTFhOTQxODhjYTA2In0.Qgw_k6qa9VRH0-7myrzojMf6W3cc0BFg9CKF1QIkbTA
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4NjAzODkzLCJpYXQiOjE3Mzg2MDAyOTMsImp0aSI6ImYyNDk2MTljYjFiZTQ4NDZhMzIwODcwMTY5MTA3YmI1IiwidXNlcl9pZCI6IjIzM2RkNzNkYWVhMDQzMmI5NDIxMDYyZGU4NjkwYmUzIn0.ip_Y-nfQWfzTKd2OJPw5dwsDy8yDhf917XOLUAC1qVk
+@refresh_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczOTIwNTA5MywiaWF0IjoxNzM4NjAwMjkzLCJqdGkiOiJjZGIyYTIxZGI4NmM0OWJhYTg1MjIyYzJmN2Y0MDE4OSIsInVzZXJfaWQiOiIyMzNkZDczZGFlYTA0MzJiOTQyMTA2MmRlODY5MGJlMyJ9.rLPXtChEMNGeRQs363XLbSMyGSo_VpyOLQjwCKC5DbY
 
 POST http://localhost:8000/api/token/ HTTP/1.1
 Content-Type: application/json
@@ -49,6 +50,15 @@ Content-Type: application/json
 
 ###
 POST http://localhost:8000/api/logout HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "refresh_token": "{{refresh_token}}",
+}
+
+###
+GET http://localhost:8000/api/user HTTP/1.1
 Authorization: Bearer {{token}}
 
 ###
