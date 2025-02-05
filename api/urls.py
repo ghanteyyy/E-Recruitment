@@ -28,4 +28,5 @@ urlpatterns = [
     path('api/user/documents', views.User_Document_view.as_view(), name='documents'),
     path('api/recruiter', views.Recruiter_view.as_view(), name="recruiters"),
     path('api/job', views.Job_view.as_view(), name="jobs"),
+    path('api/user/application', views.User_Application_view.as_view(), name='application'),
 ]
