@@ -215,3 +215,51 @@ class Job_view(APIView):
 
         except models.Jobs.DoesNotExist:
             return Response({'message': 'Job does not exist'}, status=status.HTTP_200_OK)
+
+
+class User_Application_view(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        applications = models.User_Applications.objects.filter(user_id=request.user)
+
+        if not applications:
+            return Response({'error': 'No application to fetch'}, status=status.HTTP_200_OK)
+
+        application_serializer = User_Applications_Serializer(applications, many=True)
+
+        return Response(application_serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request):
+        user_id = request.user
+        job_id = request.data.get('job_id').strip()
+
+        if models.User_Applications.objects.filter(job_id=job_id, user_id=user_id):
+            return Response({'error': 'Application already submitted'})
+
+        job = models.Jobs.objects.filter(id=job_id)
+
+        new_application = models.User_Applications.objects.create(
+            user_id = user_id,
+            job_id = job.first(),
+            cover_letter = request.data.get('cover_letter'),
+            resume = request.data.get('resume')
+        )
+        new_application.save()
+
+        serialized_application = User_Applications_Serializer(new_application)
+
+        return Response(serialized_application.data, status=status.HTTP_200_OK)
+
+    def delete(self, request):
+        user_id = request.user
+        job_id = request.data.get('job_id').strip()
+        application_id = request.data.get('application_id').strip()
+
+        job = models.User_Applications.objects.filter(id=application_id, user_id=user_id, job_id=job_id)
+
+        if not job:
+            return Response({'error': 'Job not found'})
+
+        # job.delete()
+        return Response({'message': 'Job application cancelled'})
