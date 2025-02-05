@@ -140,3 +140,20 @@ class Jobs_Serializer(serializers.ModelSerializer):
 
     def get_job_id(self, obj):
         return obj.id
+
+
+class User_Applications_Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.User_Applications
+        fields = '__all__'
+
+    def create(self, validated_data):
+        application = models.User_Applications.objects.create(
+            job_id =validated_data.get('job_id'),
+            user_id = validated_data.get('user_id'),
+
+            cover_letter = validated_data.get('cover_letter'),
+            resume = validated_data.get('resume')
+        )
+
+        return application
