@@ -1,13 +1,14 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4NjAzODkzLCJpYXQiOjE3Mzg2MDAyOTMsImp0aSI6ImYyNDk2MTljYjFiZTQ4NDZhMzIwODcwMTY5MTA3YmI1IiwidXNlcl9pZCI6IjIzM2RkNzNkYWVhMDQzMmI5NDIxMDYyZGU4NjkwYmUzIn0.ip_Y-nfQWfzTKd2OJPw5dwsDy8yDhf917XOLUAC1qVk
-@refresh_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczOTIwNTA5MywiaWF0IjoxNzM4NjAwMjkzLCJqdGkiOiJjZGIyYTIxZGI4NmM0OWJhYTg1MjIyYzJmN2Y0MDE4OSIsInVzZXJfaWQiOiIyMzNkZDczZGFlYTA0MzJiOTQyMTA2MmRlODY5MGJlMyJ9.rLPXtChEMNGeRQs363XLbSMyGSo_VpyOLQjwCKC5DbY
+@refresh_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczOTMyOTAxOCwiaWF0IjoxNzM4NzI0MjE4LCJqdGkiOiIzNjg3NTZmNTViOGQ0ZWZmYWY3Yzk4MjIwMWVjODAxYSIsInVzZXJfaWQiOiIzOTU4NDQzNzcwNzQ0ZTdhOTU3ZWZkMDQ4ZmI2MjQ3NSJ9.2B-Xm8ead253H5EOimfgaPLvLXZNFhRbKvCHzosoZ14
+@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4NzI3ODE4LCJpYXQiOjE3Mzg3MjQyMTgsImp0aSI6ImRkNWVmNGFhNDJiNzQwZjRiNTE2MGFiMjViODkwYjRmIiwidXNlcl9pZCI6IjM5NTg0NDM3NzA3NDRlN2E5NTdlZmQwNDhmYjYyNDc1In0.W6ea_KBMTes0KW8YqgUWkqko9RfMGFhlrYR4-UmIDZ4
 
-POST http://localhost:8000/api/token/ HTTP/1.1
+POST http://localhost:8000/api/access_token/ HTTP/1.1
 Content-Type: application/json
 
 {
     "email": "test@test.com",
     "password": "test123"
 }
+
 
 ###
 POST http://localhost:8000/api/register HTTP/1.1
@@ -50,20 +51,20 @@ Content-Type: application/json
 
 ###
 POST http://localhost:8000/api/logout HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 
 {
-    "refresh_token": "{{refresh_token}}",
+    "refresh_token": "{{refresh_token}}"
 }
 
 ###
 GET http://localhost:8000/api/user HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 ###
 POST http://127.0.0.1:8000/api/profile/image HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: multipart/form-data; boundary=boundary123
 
 --boundary123
@@ -75,15 +76,15 @@ Content-Type: image/jpeg
 
 ###
 GET http://127.0.0.1:8000/api/profile/image HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 ###
 GET http://localhost:8000/api/user/documents HTTP/1.1
-Authorization:  Bearer {{token}}
+Authorization:  Bearer {{access_token}}
 
 ###
 POST http://127.0.0.1:8000/api/user/documents HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: multipart/form-data; boundary=boundary123
 
 --boundary123
@@ -98,8 +99,31 @@ Content-Type: image/jpeg
 --boundary123--
 
 ###
+POST http://localhost:8000/api/user/application HTTP/1.1
+Authorization: Bearer {{access_token}}
+Content-Type: multipart/form-data; boundary=boundary123
+
+--boundary123
+Content-Disposition: form-data; name="job_id"
+
+5bb86dfd1380450fac84f00d2c9eeef8
+
+--boundary123
+Content-Disposition: form-data; name="cover_letter"; filename="cover_letter.jpg"
+Content-Type: image/jpeg
+
+< D:\__all__\pdf\1st Sem - Board.jpg
+
+--boundary123
+Content-Disposition: form-data; name="resume"; filename="resume.jpg"
+Content-Type: image/jpeg
+
+< D:\__all__\pdf\1st Sem - Board.jpg
+--boundary123--
+
+###
 GET http://localhost:8000/api/recruiter HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 ###
 POST http://localhost:8000/api/recruiter HTTP/1.1
@@ -148,7 +172,7 @@ Content-Type: application/json
 ###
 POST http://localhost:8000/api/job HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
     "title": "Software Engineer",
@@ -161,11 +185,11 @@ Authorization: Bearer {{token}}
 
 ###
 GET http://localhost:8000/api/job HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 ###
 DELETE http://localhost:8000/api/job HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 
 {
