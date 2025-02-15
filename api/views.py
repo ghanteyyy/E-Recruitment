@@ -38,7 +38,7 @@ class Register(APIView):
         # Serialize the created user instance
         response_serializer = UserSerializer(user)
 
-        # Automaically make the user login
+        # Automatically make the user login
         user_login = login_and_generate_tokens(request, request.data['email'], request.data['password'])
 
         # Response data
@@ -90,9 +90,9 @@ class UpdateProfileImage(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
-        seriazlied = User_Profiles_Image_Serializers(data=request.data, context={'user': request.user})
-        seriazlied.is_valid(raise_exception=True)
-        profile_image = seriazlied.save()
+        serialized = User_Profiles_Image_Serializers(data=request.data, context={'user': request.user})
+        serialized.is_valid(raise_exception=True)
+        profile_image = serialized.save()
 
         return Response(
             {"message": "Profile image updated successfully!", "data": User_Profiles_Image_Serializers(profile_image).data},
@@ -158,9 +158,9 @@ class Recruiter_view(APIView):
         recruiter = models.Recruiter.objects.get(user_id=request.user)
         recruiter_data = Recruiter_Serializer(recruiter).data
 
-        reponse_data = recruiter_data | user_data | {'token': jwt_tokens}
+        response_data = recruiter_data | user_data | {'token': jwt_tokens}
 
-        return Response(reponse_data, status=status.HTTP_200_OK)
+        return Response(response_data, status=status.HTTP_200_OK)
 
     def post(self, request):
         user_serialized = UserSerializer(data=request.data)

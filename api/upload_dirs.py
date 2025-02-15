@@ -29,7 +29,7 @@ def user_profile_path(instance, filename):
 
 def user_documents_path(instance, filename):
     '''
-    Path to store user's documaents: <instance.user_id.id>/documents/<filename>
+    Path to store user's documents: <instance.user_id.id>/documents/<filename>
     '''
 
     extension = filename.split('.')[-1]
