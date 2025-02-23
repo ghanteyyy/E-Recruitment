@@ -261,5 +261,5 @@ class User_Application_view(APIView):
         if not job:
             return Response({'error': 'Job not found'})
 
-        # job.delete()
+        job.delete()
         return Response({'message': 'Job application cancelled'})
