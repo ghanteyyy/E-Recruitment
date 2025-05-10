@@ -1,0 +1,146 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+  <diagram name="Organizational Hierarchy" id="0">
+    <mxGraphModel dx="1855" dy="2082" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="irtDXfVfJg5i0yZjALqy-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-5" target="irtDXfVfJg5i0yZjALqy-46" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-5" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;Board of Directors&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="650" y="-1020" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-44" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;Nepal Oil Corporation&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="650" y="-1120" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-5" target="irtDXfVfJg5i0yZjALqy-47" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1275" y="-980" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-46" target="irtDXfVfJg5i0yZjALqy-49" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-46" target="irtDXfVfJg5i0yZjALqy-48" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-46" target="irtDXfVfJg5i0yZjALqy-50" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-46" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;Chairman&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="-920" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-47" target="irtDXfVfJg5i0yZjALqy-56" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-47" target="irtDXfVfJg5i0yZjALqy-55" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-47" target="irtDXfVfJg5i0yZjALqy-57" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-47" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;Managing Director NOC&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1160" y="-920" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-48" target="irtDXfVfJg5i0yZjALqy-51" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-48" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Member&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Ministry of Finance&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="-800" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-49" target="irtDXfVfJg5i0yZjALqy-52" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-49" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Member&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Ministry of Industry&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="10" y="-800" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-50" target="irtDXfVfJg5i0yZjALqy-53" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-50" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Member&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Nepal Bureau of Standard and Metrology&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="590" y="-800" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-51" target="irtDXfVfJg5i0yZjALqy-54" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-51" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;Expert Member&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="-680" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-52" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Member Department of Commerce&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="10" y="-680" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-53" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;Member Secretary&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="590" y="-680" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-54" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Invitee Member&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="-570" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-55" target="irtDXfVfJg5i0yZjALqy-58" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-55" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;Deputy Managing Director Corporate Affairs&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1160" y="-800" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-56" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;Deputy Managing Director Finance/Administration&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="870" y="-800" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-57" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;Deputy Managing Director Marketing&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1450" y="-800" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-58" target="irtDXfVfJg5i0yZjALqy-61" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-58" value="&lt;b style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;DIRECTOR&lt;/font&gt;&lt;/b&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Quality Control and Monitoring Department&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1160" y="-680" width="230" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-59" target="irtDXfVfJg5i0yZjALqy-62" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-59" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;DIRECTOR&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Supply and Distribution Department&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="870" y="-680" width="230" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-60" target="irtDXfVfJg5i0yZjALqy-63" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-60" value="&lt;b style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;DIRECTOR&lt;/font&gt;&lt;/b&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Planning Administration and Human resources Department&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1450" y="-680" width="230" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-61" value="&lt;b style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;DIRECTOR&lt;/font&gt;&lt;/b&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;LPG and Aviation Department&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1160" y="-520" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-62" value="&lt;b style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;DIRECTOR&lt;/font&gt;&lt;/b&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Engineering Projects and IT Department&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="870" y="-520" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-63" value="&lt;b style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;DIRECTOR&lt;/font&gt;&lt;/b&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Finance Department&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1450" y="-520" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-83" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-56" target="irtDXfVfJg5i0yZjALqy-57" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1330" y="-820" as="sourcePoint" />
+            <mxPoint x="1580" y="-720" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="985" y="-720" />
+              <mxPoint x="1565" y="-720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="irtDXfVfJg5i0yZjALqy-85" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="irtDXfVfJg5i0yZjALqy-59" target="irtDXfVfJg5i0yZjALqy-60" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1310" y="-750" as="sourcePoint" />
+            <mxPoint x="1570" y="-700" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="985" y="-700" />
+              <mxPoint x="1565" y="-700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3zreKa89o7eA9EukqbfG-1" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="irtDXfVfJg5i0yZjALqy-44" target="irtDXfVfJg5i0yZjALqy-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="-920" as="sourcePoint" />
+            <mxPoint x="750" y="-970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
